@@ -17,6 +17,7 @@ export default function Posts() {
         const [save, setSave] = React.useState("bookmark-outline")
         const [like, setLike] = React.useState("heart-outline")
         const [color, setColor] = React.useState("black")
+        const [addlike, setAddLike] = React.useState(0)
 
         function salvar(){
             if (save === "bookmark-outline"){
@@ -29,11 +30,13 @@ export default function Posts() {
         function curtir(){
             if (like === "heart-outline"){
                 setLike("heart");
-                setColor("red")
+                setColor("red");
+                setAddLike(1)
                 
             } else if (like === "heart"){
-                setLike("heart-outline")
-                setColor("black")
+                setLike("heart-outline");
+                setColor("black");
+                setAddLike(0)
         
             }
         }
@@ -70,7 +73,7 @@ export default function Posts() {
                     <div class="curtidas">
                         <img src={props.curtidoimg} />
                         <div class="texto">
-                            Curtido por <strong>{props.curtidouser}</strong> e <strong>outras {props.curtidas} pessoas</strong>
+                            Curtido por <strong>{props.curtidouser}</strong> e <strong>outras {props.curtidas + addlike} pessoas</strong>
                         </div>
                     </div>
                 </div>
