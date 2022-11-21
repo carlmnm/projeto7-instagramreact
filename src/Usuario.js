@@ -19,7 +19,7 @@ export default function Usuario() {
     return (
         <div class="usuario">
             
-            <img onClick={novaImagem} src={imagem} />
+            <img onClick={novaImagem} src={!imagem ? dadosuser[0] : imagem} />
             <div class="texto">
                 <strong>catanacomics</strong>
                 <span>
