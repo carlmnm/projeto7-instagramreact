@@ -1,5 +1,6 @@
 export default function Navbar() {
     return (
+        
         <div class="navbar">
             <div class="container">
                 <div class="logo">
